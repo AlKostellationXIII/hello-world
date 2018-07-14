@@ -1,15 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-
-int main(int argc, char *argv[])
+// RESPS= RESPOSTA, NBR= NUMERO, CALC=CONTADOR,CHS=ESCOLHA
+// RESPS= RESPOSTA, NBR= NUMERO, CALC=CONTADOR,CHS=ESCOLHA
+// RESPS= RESPOSTA, NBR= NUMERO, CALC=CONTADOR,CHS=ESCOLHA
+int resps;
+int nbr,calc;
+int chs;
+int main(int argc, char *argv[]) 
 {
-  setlocale(LC_ALL, "Portuguese");
-  char name[70];
-  gets(name);
-  system("color 6");
-  system("cls");
-  printf("Digite seu nome: ");
-  printf("Olá, %s!\n");
-  system("pause");
-  return 0;
+{	
+	char name[30];
+	setlocale(LC_ALL,"Portuguese,English");
+	system("color 6");
+	printf("What's your name: ");
+	gets(name);
+	system("cls");
+	system("color 2");
+	printf("Wellcome, %s! \n",name);
+	printf("1-Menu \n");
+	printf("2-Calculator \n");
+	scanf("%d", &chs);
+	switch (chs)
+	{
+		case 1:
+		system("cls");
+		printf("Wellcome to menu!\n");
+		break;
+		{
+		}		
+		case 2:
+		system("cls");
+		printf("Loading Calculator...\n");
+		printf("Enter the number of the table you want to calculate: ");
+        scanf("%d", &nbr);
+        for(calc=0;calc<=10;calc++)
+		{
+			printf("%d x %d = %d\n",nbr,calc,nbr*calc);	
+		}
+		printf("1-Novo calculo\n");
+		printf("2-Sair\n");
+		scanf("%d",resps);
+		break;
+		default:
+		printf("What??? Write one of the above!");
+}while (resps != 2);
+	system("pause");
+	return 0;
+}
